@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+
+}
+
+.container{
+    width: 366px;
+    height: 650px;
+    position: relative;
+    /* relative necessario para o div PAI */
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.top{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 1;
+}
+
+.capa-album{
+    height: 366px;
+    width: 100%;
+    position: absolute;
+    background: url("/scr/img/background_2.jpg");
+    /* border: 1px solid red; */
+    background-size: cover;
+    transform-origin: 0% 0%;
+    transition: all 0.3s;
+    
+    
+}
+
+
+.container.active .capa-album{
+    top: 53px;
+    left: 40px;
+    transform: scale(0.25);
+    border-radius: 20px;
+
+}
+
+.container-lista-musicas{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 180px;
+    width: 100%;
+    visibility: hidden;
+
+
+
+}
+
+.container.active .container-lista-musicas{
+    visibility: visible;
+}
+
+
+.tabela-musicas{
+    width: 100%;
+    border-spacing: 0 5px;
+    /* position: absolute; */
+
+
+    /* border: 1px solid red; */
+    /* background-color: blue; */
+
+}
+
+.tabela-musicas tr{
+    height: 50px;
+    text-indent: 30px;
+    font-size: 16px;
+    background-color: #1d1d1d;
+    transition: all 0.1s;
+    
+
+}
+
+.tabela-musicas tr:hover{
+    font-size: 20px;
+    opacity: 75%;
+}
+
+.info{
+    /* width: 100%; */
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    font-family: "Montserrat", sans-serif;
+
+}
+
+
+
+.container.active .info{
+    top: 60px;
+    text-align: left;
+    right: 100px ;
+    transition: all 0.3s;
+
+}
+
+.btns-player{
+    width: 100%;
+    height: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 32px;
+    /* height: 35px; */
+    bottom: 120px;
+    z-index: 10;
+    transition: all ease-in 0.3s;
+    
+    
+}
+.container.active .btns-player{
+    bottom: 12px;
+    left: -120px;
+    transform: scale(0.65);
+    transition: all 0.3s;
+
+}
+.titulo-atual{
+    bottom: -30px;
+    transition: all 0.3s;
+
+}
+
+.container.active .titulo-atual{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.btns-funcionalidades{
+    position: absolute;
+    bottom: 12px;
+    padding: 10px 20px;
+    /* gap: 15px; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    visibility: visible;
+    transition: all 0.3s;
+
+}
+
+
+.container.active .btns-funcionalidades{
+    visibility: hidden;
+    transition: all 0.1s;
+
+}
